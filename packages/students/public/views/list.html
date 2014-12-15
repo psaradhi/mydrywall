@@ -1,0 +1,74 @@
+<section data-ng-controller="StudentsController" data-ng-init="find()">
+  <div data-ng-show="students && students.length" class="col-md-12"> 
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-header">
+          <h2 id="container">STUDENTS</h2>
+        </div>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Filter By Description" ng-model="filters.description" ng-change="getListProducts()">
+            <br/>
+            Description
+          </th>
+          <th> Price </th>
+          <th>
+            <button type="submit" class="btn btn-success" ng-click="create()">New Student</button>
+	    <br/><br/>
+            Actions
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat = "student in students">
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <div class="button-actions">
+              <button type="button" class="btn btn-default" title="View" ng-click="">
+              <span class="glyphicon glyphicon-eye-open"></span>
+              </button>
+	      <button type="button" class="btn btn-default" title="Edit" ng-click="">
+              <span class="glyphicon glyphicon-edit"></span>
+              </button>
+              <button type="button" class="btn btn-default" title="Remove" ng-click="remove(student)">
+              <span class="glyphicon glyphicon-remove-circle"></span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h1 data-ng-hide="!students || students.length">No students yet. <br> Add a new <a href="/#!/students/create">student</a></h1>
+  <!--
+  <h1 data-ng-hide="!students || students.length">No students yet. <br> Add a <button type="submit" class="btn btn-success" data-ng-click="create()">New Student</button> </h1>
+  -->
+    
+
+  <!--
+  <ul class="students unstyled">
+    <li data-ng-repeat="student in students">
+      <span>{{student.created | date:'medium'}}</span> /
+      <span>{{student.user.name}}</span>
+      <h2>
+        <a data-ng-href="#!/students/{{student._id}}">{{student.title}}</a>
+        <span data-ng-if="hasAuthorization(student)">
+          <a class="btn" href="/#!/students/{{student._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+          </a>
+          <a class="btn" data-ng-click="remove(student);">
+            <i class="glyphicon glyphicon-trash"></i>
+          </a>
+        </span>
+      </h2>
+      <div>{{student.content}}</div>
+    </li>
+  </ul>
+  -->
+</section>
