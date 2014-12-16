@@ -1,4 +1,5 @@
 <section data-ng-controller="StudentsController">
+        <!--
   <form name="studentForm" class="form-horizontal col-md-6" role="form" data-ng-submit="create(studentForm.$valid)" novalidate>
     <div class="form-group" ng-class="{ 'has-error' : submitted && studentForm.title.$invalid }">
       <label mean-token="'create-title'" class="col-md-3 control-label">Title</label>
@@ -25,4 +26,68 @@
       </div>
     </div>
   </form>
+-->
+<div class="container">
+  <div class="row">
+<form name="studentForm" class="form-horizontal col-md-6" role="form" data-ng-submit="create(studentForm.$valid)" novalidate>
+            <fieldset>
+                <!-- Address form -->
+                <h2>Address</h2>
+                <!-- full-name input-->
+                <div class="control-group">
+                    <label class="control-label">Full Name</label>
+                    <div class="controls">
+                        <input data-ng-model="first_name" id="first_name" name="first_name" type="text" placeholder="First Name" class="input-xlarge">
+                        <input data-ng-model="middle_name" id="middle_name" name="middle_name" type="text" placeholder="Middle Name" class="input-xlarge">
+                        <input data-ng-model="last_name" id="last_name" name="last_name" type="text" placeholder="Last Name" class="input-xlarge">
+                    </div>
+                </div>
+                <!-- address-line1 input-->
+                <div class="control-group">
+                    <label class="control-label">Address Line 1</label>
+                    <div class="controls">
+                        <input data-ng-model="student_address1" id="student_address1" name="student_address1" type="text" placeholder="address line 1" class="input-xlarge">
+                    </div>
+                </div>
+                <!-- address-line2 input-->
+                <div class="control-group">
+                    <label class="control-label">Address Line 2</label>
+                    <div class="controls">
+                        <input id="address-line2" name="address-line2" type="text" placeholder="address line 2"
+                        class="input-xlarge">
+                    </div>
+                </div>
+                <!-- city input-->
+                <div class="control-group">
+                    <label class="control-label">City / Town</label>
+                    <div class="controls">
+                        <input id="city" name="city" type="text" placeholder="city" class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- region input-->
+                <div class="control-group">
+                    <label class="control-label">State</label>
+                    <div class="controls">
+                        <input id="region" name="region" type="text" placeholder="State"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+                <!-- postal-code input-->
+                <div class="control-group">
+                    <label class="control-label">Zip code</label>
+                    <div class="controls">
+                        <input id="postal-code" name="postal-code" type="text" placeholder="Zip code"
+                        class="input-xlarge">
+                        <p class="help-block"></p>
+                    </div>
+                </div>
+            </fieldset>
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-9">
+        <button mean-token="'create-submit'" type="submit" class="btn btn-info">Submit</button>
+      </div>
+    </div>
+</form>
 </section>

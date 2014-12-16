@@ -14,9 +14,9 @@
           <th>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Filter By Description" ng-model="filters.description" ng-change="getListProducts()">
             <br/>
-            Description
+            Name
           </th>
-          <th> Price </th>
+          <th> Address </th>
           <th>
             <button type="submit" class="btn btn-success" ng-click="create()">New Student</button>
 	    <br/><br/>
@@ -26,8 +26,8 @@
       </thead>
       <tbody>
         <tr data-ng-repeat = "student in students">
-          <td>{{product.description}}</td>
-          <td>{{product.price}}</td>
+          <td>{{student.first_name}}&nbsp{{student.middle_name}}&nbsp{{student.last_name}}</td>
+          <td>{{student.student_address1}}&nbsp{{student.student_address2}}&nbsp{{student.student_city}}&nbsp{{student.student_state}}&nbsp{{student.student_zip}}</td>
           <td>
             <div class="button-actions">
               <button type="button" class="btn btn-default" title="View" ng-click="">

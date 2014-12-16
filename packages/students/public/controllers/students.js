@@ -10,12 +10,48 @@ angular.module('mean.students').controller('StudentsController', ['$scope', '$st
     };
 
     $scope.create = function(isValid) {
+      console.log('sending request');
       if (isValid) {
         var student = new Students({
-          title: this.title,
-          content: this.content
+first_name: this.first_name,
+middle_name: this.middle_name,
+last_name: this.last_name,
+father_first_name: this.father_first_name,
+father_middle_name: this.father_middle_name,
+father_last_name: this.father_last_name,
+father_work_phone: this.father_work_phone,
+father_home_phone: this.father_home_phone,
+father_cell_phone: this.father_cell_phone,
+father_email: this.father_email,
+mother_first_name: this.mother_first_name,
+mother_middle_name: this.mother_middle_name,
+mother_last_name: this.mother_last_name,
+mother_work_phone: this.mother_work_phone,
+mother_home_phone: this.mother_home_phone,
+mother_cell_phone: this.mother_cell_phone,
+mother_email: this.mother_email,
+student_address1: this.student_address1,
+student_address2: this.student_address2,
+student_city: this.student_city,
+student_state: this.student_state,
+student_zip: this.student_zip,
+father_address1: this.father_address1,
+father_address2: this.father_address2,
+father_city: this.father_city,
+father_state: this.father_state,
+father_zip: this.father_zip,
+mother_address1: this.mother_address1,
+mother_address2: this.mother_address2,
+mother_city: this.mother_city,
+mother_state: this.mother_state,
+mother_zip: this.mother_zip,
+grade: this.grade
+          
+
         });
+        console.log(student);
         student.$save(function(response) {
+          console.log(response);
           $location.path('students/' + response._id);
         });
 

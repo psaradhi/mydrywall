@@ -27,7 +27,11 @@ exports.create = function(req, res) {
   var student = new Student(req.body);
   student.user = req.user;
 
+  console.log(req);
+  console.log(student);
+
   student.save(function(err) {
+    //console.log(err);
     if (err) {
       return res.status(500).json({
         error: 'Cannot save the student'
